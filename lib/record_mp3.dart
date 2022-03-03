@@ -65,7 +65,7 @@ class RecordMp3 {
     if (_status == RecordStatus.RECORDING || _status == RecordStatus.PAUSE) {
       _onRecordError = null;
       _status = RecordStatus.IDEL;
-      _channel.invokeMethod("stop");
+      await _channel.invokeMethod("stop");
       return true;
     }
     return false;
