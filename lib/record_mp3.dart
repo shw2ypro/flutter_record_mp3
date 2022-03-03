@@ -61,7 +61,7 @@ class RecordMp3 {
   }
 
   ///stop record and export a record file
-  bool stop() {
+  Future<bool> stop() async{
     if (_status == RecordStatus.RECORDING || _status == RecordStatus.PAUSE) {
       _onRecordError = null;
       _status = RecordStatus.IDEL;
