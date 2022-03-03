@@ -65,7 +65,7 @@ class RecordMp3 {
     if (_status == RecordStatus.RECORDING || _status == RecordStatus.PAUSE) {
       _onRecordError = null;
       _status = RecordStatus.IDEL;
-      await _channel.invokeMethod("stop");
+      _channel.invokeMethod("stop");
       return true;
     }
     return false;
@@ -87,7 +87,7 @@ enum RecordStatus {
   IDEL,
   RECORDING,
   PAUSE,
-  // COMPLETE,
+  COMPLETE,
   // ERROR,
 }
 
